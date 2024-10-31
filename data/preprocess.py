@@ -1,6 +1,8 @@
 import os
 from transformers import AutoTokenizer
 
+files_path = 'documents/'
+
 def preprocess_documents(input_folder, output_file="processed_documents.txt"):
     tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-mpnet-base-v2")
     with open(output_file, "w", encoding="utf-8") as out_f:
@@ -12,5 +14,5 @@ def preprocess_documents(input_folder, output_file="processed_documents.txt"):
                     out_f.write(" ".join(tokens) + "\n")
 
 if __name__ == "__main__":
-    preprocess_documents("documents")
+    preprocess_documents(files_path)
     print("Documents preprocessed and saved.")

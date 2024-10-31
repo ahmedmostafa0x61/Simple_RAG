@@ -15,3 +15,4 @@ class Retriever:
         scores = util.cos_sim(query_embedding, doc_embeddings)[0]
         best_scores = sorted(zip(scores, self.documents), reverse=True)[:top_k]
         return [doc for score, doc in best_scores]
+
