@@ -1,5 +1,3 @@
-from src.retrieve import Retriever
-from src.generate import Generator
 
 class RAGModel:
     def __init__(self, retriever, generator):
